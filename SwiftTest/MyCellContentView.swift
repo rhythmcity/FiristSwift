@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  MyCellContentView.swift
 //  SwiftTest
 //
 //  Created by 李言 on 14-6-4.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-class DetailView: UIView {
-
+class MyCellContentView: UIView {
+    var image:UIImage?
+    var name:NSString?
     init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
+       self.backgroundColor=UIColor.whiteColor()
     }
 
     
@@ -20,13 +22,11 @@ class DetailView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect)
     {
-
+      self.image!.drawInRect(CGRectMake(10, 10, 80, 80))
+      self.name!.drawInRect(CGRectMake(120, 10, 180, 40), withAttributes :[NSFontAttributeName:UIFont.systemFontOfSize(18), NSForegroundColorAttributeName:UIColor.darkGrayColor()])
         
-        var image=UIImage(named:"11-2.png")
-        image.drawInRect(CGRectMake(20, 10, 40, 40))
-        var text:NSString = "SWift"
-        // Drawing code
     }
     
+
 
 }

@@ -11,38 +11,42 @@ import QuartzCore
 
 class DetailViewController: UIViewController {
     var  titlename:String?
-    
+    var  drawview: UIView?
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
+      
     }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var device:UIDevice = UIDevice.currentDevice() as UIDevice
-//        println(device.systemVersion)
-//        
-//        if device.systemVersion 
-//        {
+        println(device.systemVersion)
+        var  version :NSString = device.systemVersion
+        if version.doubleValue >= 7
+        {
          self.edgesForExtendedLayout = UIRectEdge.None;
-    //    }
-      
-    
+        }
         self.title=self.titlename
-        var drawview=DetailView(frame:CGRect(x: 30,y: 50,width: 100,height: 100))
-        drawview.backgroundColor=UIColor.greenColor()
-        self.view.addSubview(drawview)
+        self.drawview = DetailView(frame:self.view.frame)
+        self.drawview!.backgroundColor = UIColor.greenColor()
+        self.view.addSubview(self.drawview)
+        setupView();
         
-        var animation :CABasicAnimation = CABasicAnimation(keyPath: "transform.scale") as CABasicAnimation
-       
-        animation.fromValue=NSValue(CATransform3D : CATransform3DMakeScale(1, 1, 1))
-        animation.toValue=NSValue(CATransform3D : CATransform3DMakeScale(1.5, 1.5, 1.5))
-        animation.duration=5
-        drawview.layer.addAnimation(animation,forKey: nil)
+        
+//        var animation :CABasicAnimation = CABasicAnimation(keyPath: "transform.scale") as CABasicAnimation
+//        animation.fromValue=NSValue(CATransform3D : CATransform3DMakeScale(1, 1, 1))
+//        animation.toValue=NSValue(CATransform3D : CATransform3DMakeScale(1.5, 1.5, 1.5))
+//        animation.duration=1
+//        drawview.layer.addAnimation(animation,forKey: nil)
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func setupView(){
+    
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

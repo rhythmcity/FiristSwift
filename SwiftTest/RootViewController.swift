@@ -16,7 +16,8 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
-    var flowers:NSArray=[]
+    var flowers:NSMutableArray=[]
+    var nameArr:NSMutableArray=[]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,11 +27,14 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
         table.delegate=self
         table.dataSource=self
         self.view.addSubview(table)
-       self.flowers=["0","1","2","3","4","5","6"]
-      
         
-       
-        
+        for index in 1..10{
+        self.flowers.addObject("\(index).jpg")
+        }
+//        for index in 1..9{
+            self.nameArr=["爱情万岁","人生海海","第一张创作专辑","神的孩子都在跳舞","为爱而生","知足","后青春期的诗","第二人生(末日版)","第二人生(明日版)"]
+//        }
+    
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
@@ -43,7 +47,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
     }
     
    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat{
-    return  50
+    return  100
     
     }
     
@@ -53,10 +57,9 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
     
         let sampleindetifie:String="sampleindetifie"
-
-        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: sampleindetifie)
-        
-        cell.textLabel.text = self.flowers[indexPath.row] as String
+        let  cell = MyTableViewCell(style: .Subtitle, reuseIdentifier: sampleindetifie)
+        var str = self.flowers[indexPath.row] as String
+        cell.setcell(UIImage(named: str),name:self.nameArr[indexPath.row] as String)
         return cell
         
     }
@@ -66,7 +69,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
        println(indexPath.row) 
        
         var detailvc:DetailViewController=DetailViewController(nibName: "DetailViewController",bundle: nil)
-        detailvc.titlename=self.flowers[indexPath.row] as? String
+        detailvc.titlename=self.nameArr[indexPath.row] as? String
         self.navigationController.pushViewController(detailvc, animated: true)
     }
     
