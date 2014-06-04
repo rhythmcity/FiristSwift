@@ -9,15 +9,14 @@
 import UIKit
 
 
-class ViewController:UIViewController, UITableViewDelegate,UITableViewDataSource{
+class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSource{
 
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
-    
-    var flowers:NSArray=["0","1","2","3","4","5","6","7","8","9","10"]
+    var flowers:NSArray=[]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,17 +26,10 @@ class ViewController:UIViewController, UITableViewDelegate,UITableViewDataSource
         table.delegate=self
         table.dataSource=self
         self.view.addSubview(table)
-//
-        //var btn:UIButton=UIButton.buttonWithType(.System) as UIButton
-//      let btn =  UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-//       btn.backgroundColor=UIColor.redColor()
-//        btn.setTitle("Woah, press me!", forState: UIControlState.Normal)
-//        btn.setImage(UIImage(named:"11-2.png"), forState : UIControlState.Normal)
-//        btn.setImage(UIImage(named:"11-4.png"), forState : UIControlState.Selected)
-    
-//        btn.addTarget(self,  action: "btnClick:", forControlEvents: UIControlEvents.TouchUpInside)
-//      //  btn.targetForAction( "btnClick:", withSender: self)
-//        self.view.addSubview(btn)
+       self.flowers=["0","1","2","3","4","5","6"]
+      
+        
+       
         
     }
     
@@ -64,7 +56,7 @@ class ViewController:UIViewController, UITableViewDelegate,UITableViewDataSource
 
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: sampleindetifie)
         
-        cell.textLabel.text = self.flowers[indexPath.row]
+        cell.textLabel.text = self.flowers[indexPath.row] as String
         return cell
         
     }
@@ -74,6 +66,7 @@ class ViewController:UIViewController, UITableViewDelegate,UITableViewDataSource
        println(indexPath.row) 
        
         var detailvc:DetailViewController=DetailViewController(nibName: "DetailViewController",bundle: nil)
+        detailvc.titlename=self.flowers[indexPath.row] as? String
         self.navigationController.pushViewController(detailvc, animated: true)
     }
     
