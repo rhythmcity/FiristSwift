@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         var str:String?="RootViewController"
-        var rootvc:RootViewController=RootViewController(nibName :str, bundle: nil)
-        self.window!.rootViewController=rootvc
+        var rootvc:UIViewController=ViewController(nibName :str, bundle: nil)
+        var navc:UINavigationController=UINavigationController(rootViewController: rootvc)
+        self.window!.rootViewController=navc
         self.window!.makeKeyAndVisible()
         return true
     }
