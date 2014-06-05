@@ -29,6 +29,8 @@
 		BA93536A194039F600E6C389 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA93535F194039F600E6C389 /* 9.jpg */; };
 		BA93536B194039F600E6C389 /* 11-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA935360194039F600E6C389 /* 11-2.png */; };
 		BA93536C194039F600E6C389 /* 11-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA935361194039F600E6C389 /* 11-4.png */; };
+		BA93536E1940425100E6C389 /* FirstAblumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536D1940425100E6C389 /* FirstAblumView.swift */; };
+		BA93537019405C0100E6C389 /* SeaLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536F19405C0100E6C389 /* SeaLifeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		BA93535F194039F600E6C389 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		BA935360194039F600E6C389 /* 11-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-2.png"; sourceTree = "<group>"; };
 		BA935361194039F600E6C389 /* 11-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-4.png"; sourceTree = "<group>"; };
+		BA93536D1940425100E6C389 /* FirstAblumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAblumView.swift; sourceTree = "<group>"; };
+		BA93536F19405C0100E6C389 /* SeaLifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaLifeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				BA4E8EE8193F54D000255ABA /* MyTableViewCell.swift */,
 				BA4E8EFE193F55BB00255ABA /* MyCellContentView.swift */,
 				BA4E8EBB193F19FC00255ABA /* DetailView.swift */,
+				BA93536D1940425100E6C389 /* FirstAblumView.swift */,
+				BA93536F19405C0100E6C389 /* SeaLifeView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -296,9 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA93537019405C0100E6C389 /* SeaLifeView.swift in Sources */,
 				BA8BBBC2193DC21C00BC6A9A /* AppDelegate.swift in Sources */,
 				BA4E8EBC193F19FD00255ABA /* DetailView.swift in Sources */,
 				BA4E8EFF193F55BB00255ABA /* MyCellContentView.swift in Sources */,
+				BA93536E1940425100E6C389 /* FirstAblumView.swift in Sources */,
 				BA4E8EEA193F54D000255ABA /* MyTableViewCell.swift in Sources */,
 				BA9353521940390D00E6C389 /* RootViewController.swift in Sources */,
 				BA9353501940390D00E6C389 /* DetailViewController.swift in Sources */,

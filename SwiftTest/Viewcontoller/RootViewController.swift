@@ -57,7 +57,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
     }
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!{
     
-        let sampleindetifie:String="sampleindetifie"
+        let sampleindetifie:String = "sampleindetifie"
         let  cell = MyTableViewCell(style: .Subtitle, reuseIdentifier: sampleindetifie)
         var str = self.flowers[indexPath.row] as String
         cell.setcell(UIImage(named: str),name:self.nameArr[indexPath.row] as String)
@@ -70,7 +70,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
        println(indexPath.row) 
        
         var detailvc:DetailViewController=DetailViewController(nibName: "DetailViewController",bundle: nil)
-        detailvc.titlename=self.nameArr[indexPath.row] as? String
+        detailvc.titlename = self.nameArr[indexPath.row] as? String
         self.navigationController.pushViewController(detailvc, animated: true)
     }
     

@@ -28,10 +28,24 @@ class DetailViewController: UIViewController,NSURLConnectionDelegate {
          self.edgesForExtendedLayout = UIRectEdge.None;
         }
         self.title=self.titlename
-        self.drawview = DetailView(frame:self.view.frame)
-        self.drawview!.backgroundColor = UIColor.whiteColor()
-        self.view.addSubview(self.drawview)
-        loadData("http://www.baidu.com")
+        let  name = self.titlename!
+        switch name {
+        case "人生海海":
+        var sealife = SeaLifeView(frame:self.view.frame)
+        case  "第一张创作专辑" :
+        var firstablum = FirstAblumView(frame:self.view.frame)
+        self.view.addSubview(firstablum)
+     
+        default:
+            self.drawview = DetailView(frame:self.view.frame)
+            self.drawview!.backgroundColor = UIColor.whiteColor()
+            self.view.addSubview(self.drawview)
+            loadData("http://www.baidu.com")
+        }
+        
+     
+        
+       
       
         
         
