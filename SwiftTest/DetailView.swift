@@ -10,6 +10,7 @@ import UIKit
 
 class DetailView: UIView {
 
+    var content :NSString?
     init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
@@ -24,7 +25,11 @@ class DetailView: UIView {
         
         var image=UIImage(named:"11-2.png")
         image.drawInRect(CGRectMake(20, 10, 40, 40))
-        var text:NSString = "SWift"
+        if let recveivestr = self.content
+        {
+        self.content!.drawInRect(CGRectMake(20, 60, 280, 1000), withAttributes :[NSFontAttributeName:UIFont.systemFontOfSize(18), NSForegroundColorAttributeName:UIColor.darkGrayColor()])
+        }
+
         // Drawing code
     }
     

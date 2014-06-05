@@ -22,7 +22,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var table:UITableView=UITableView(frame:CGRect(x: 0,y: 0,width: 320,height: 480),style:.Plain)
+        var table:UITableView=UITableView(frame:self.view.frame,style:.Plain)
       //  table.backgroundColor=UIColor.redColor()
         table.delegate=self
         table.dataSource=self
@@ -31,6 +31,7 @@ class RootViewController:UIViewController, UITableViewDelegate,UITableViewDataSo
         for index in 1..10{
         self.flowers.addObject("\(index).jpg")
         }
+    
 //        for index in 1..9{
             self.nameArr=["爱情万岁","人生海海","第一张创作专辑","神的孩子都在跳舞","为爱而生","知足","后青春期的诗","第二人生(末日版)","第二人生(明日版)"]
 //        }

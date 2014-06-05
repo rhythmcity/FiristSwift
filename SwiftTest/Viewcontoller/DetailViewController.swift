@@ -9,13 +9,13 @@
 import UIKit
 import QuartzCore
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,NSURLConnectionDelegate {
     var  titlename:String?
-    var  drawview: UIView?
+    var  drawview: DetailView?
+    var receiveData:NSMutableData?
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
-      
     }
     
     override func viewDidLoad() {
@@ -29,9 +29,10 @@ class DetailViewController: UIViewController {
         }
         self.title=self.titlename
         self.drawview = DetailView(frame:self.view.frame)
-        self.drawview!.backgroundColor = UIColor.greenColor()
+        self.drawview!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(self.drawview)
-        setupView();
+        loadData("http://www.baidu.com")
+      
         
         
 //        var animation :CABasicAnimation = CABasicAnimation(keyPath: "transform.scale") as CABasicAnimation
@@ -43,10 +44,39 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func setupView(){
+    func loadData(url:String!){
+        var requset:NSMutableURLRequest = NSMutableURLRequest(URL:NSURL((string:url)))
+       requset.HTTPMethod = "GET"
+       
+        var connection = NSURLConnection(request:requset, delegate: self)
+
+        connection.start()
+        
+        
+    }
     
+    func connection(connection: NSURLConnection!, didReceiveResponse response: NSURLResponse!){
+        var res = response as NSHTTPURLResponse;
+       
+        self.receiveData = NSMutableData()
     
     }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
+      self.receiveData!.appendData(data)
+    
+    }
+    
+     func connectionDidFinishLoading(connection: NSURLConnection!)
+     {
+      var receiveStr = NSString(data: self.receiveData, encoding: NSUTF8StringEncoding)
+        
+        
+      self.drawview!.content = receiveStr
+        
+      self.drawview!.setNeedsDisplay()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
