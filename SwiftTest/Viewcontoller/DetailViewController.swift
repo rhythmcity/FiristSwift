@@ -32,6 +32,7 @@ class DetailViewController: UIViewController,NSURLConnectionDelegate {
         switch name {
         case "人生海海":
         var sealife = SeaLifeView(frame:self.view.frame)
+        self.view.addSubview(sealife)
         case  "第一张创作专辑" :
         var firstablum = FirstAblumView(frame:self.view.frame)
         self.view.addSubview(firstablum)
@@ -45,7 +46,7 @@ class DetailViewController: UIViewController,NSURLConnectionDelegate {
         
      
         
-       
+     
       
         
         

@@ -31,6 +31,7 @@
 		BA93536C194039F600E6C389 /* 11-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA935361194039F600E6C389 /* 11-4.png */; };
 		BA93536E1940425100E6C389 /* FirstAblumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536D1940425100E6C389 /* FirstAblumView.swift */; };
 		BA93537019405C0100E6C389 /* SeaLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536F19405C0100E6C389 /* SeaLifeView.swift */; };
+		BAE9C9D21941B653003B0C9F /* sea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAE9C9D11941B653003B0C9F /* sea.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		BA935361194039F600E6C389 /* 11-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-4.png"; sourceTree = "<group>"; };
 		BA93536D1940425100E6C389 /* FirstAblumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAblumView.swift; sourceTree = "<group>"; };
 		BA93536F19405C0100E6C389 /* SeaLifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaLifeView.swift; sourceTree = "<group>"; };
+		BAE9C9D11941B653003B0C9F /* sea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sea.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		BA935356194039CE00E6C389 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BAE9C9D11941B653003B0C9F /* sea.jpg */,
 				BA935357194039F600E6C389 /* 1.jpg */,
 				BA935358194039F600E6C389 /* 2.jpg */,
 				BA935359194039F600E6C389 /* 3.jpg */,
@@ -278,6 +281,7 @@
 				BA935362194039F600E6C389 /* 1.jpg in Resources */,
 				BA9353531940390D00E6C389 /* RootViewController.xib in Resources */,
 				BA935368194039F600E6C389 /* 7.jpg in Resources */,
+				BAE9C9D21941B653003B0C9F /* sea.jpg in Resources */,
 				BA93536B194039F600E6C389 /* 11-2.png in Resources */,
 				BA935364194039F600E6C389 /* 3.jpg in Resources */,
 				BA8BBBC4193DC21C00BC6A9A /* Images.xcassets in Resources */,
@@ -349,7 +353,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -369,6 +374,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "C69F8DD4-DE03-4EEF-8BB2-16DBCA628959";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -391,7 +397,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -404,6 +411,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "C69F8DD4-DE03-4EEF-8BB2-16DBCA628959";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -414,9 +422,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C69F8DD4-DE03-4EEF-8BB2-16DBCA628959";
 			};
 			name = Debug;
 		};
@@ -425,9 +435,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoqiang li (5MDXM5QXCB)";
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C69F8DD4-DE03-4EEF-8BB2-16DBCA628959";
 			};
 			name = Release;
 		};

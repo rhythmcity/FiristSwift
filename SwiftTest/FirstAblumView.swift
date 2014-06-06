@@ -35,7 +35,7 @@ class FirstAblumView: UIView {
         var aColor=UIColor(red: 1, green: 0.0, blue: 0, alpha: 1)
         CGContextSetFillColorWithColor(context, aColor.CGColor);//填充颜色
         CGContextSetLineWidth(context, 3.0);//线的宽度
-        CGContextAddArc(context, 160, 200, 100, 0, 2*PI, 0); //添加一个圆
+        CGContextAddArc(context, 160, 200, 100, 0, 2*M_PI, 0); //添加一个圆
         CGContextDrawPath(context, kCGPathFillStroke); //绘制路径加填充
         
         CGContextSetRGBStrokeColor(context, 0, 0, 1, 1);//改变画笔颜色
