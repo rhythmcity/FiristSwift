@@ -8,10 +8,11 @@
 
 import UIKit
 import QuartzCore
-
+import SpriteKit
 class DetailViewController: UIViewController,NSURLConnectionDelegate {
     var  titlename:String?
     var  drawview: DetailView?
+    var sealife :SeaLifeView?
     var receiveData:NSMutableData?
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,11 +32,22 @@ class DetailViewController: UIViewController,NSURLConnectionDelegate {
         let  name = self.titlename!
         switch name {
         case "人生海海":
-        var sealife = SeaLifeView(frame:self.view.frame)
+        sealife = SeaLifeView(frame:self.view.frame)
         self.view.addSubview(sealife)
         case  "第一张创作专辑" :
         var firstablum = FirstAblumView(frame:self.view.frame)
         self.view.addSubview(firstablum)
+        case "后青春期的诗" :
+        var young = YoungView(frame:self.view.frame)
+        self.view.addSubview(young)
+//        case "知足":
+//            var skview:SKView = self.view as SKView
+//            skview.showsFPS = true;
+//            skview.showsNodeCount = true;
+//            skview.ignoresSiblingOrder = true
+//            var scene=SatisfactionScene.sceneWithSize(skview.bounds.size)
+//            scene.scaleMode = SKSceneScaleMode.AspectFill
+//            skview.presentScene(scene)
      
         default:
             self.drawview = DetailView(frame:self.view.frame)
@@ -97,7 +109,11 @@ class DetailViewController: UIViewController,NSURLConnectionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func viewWillDisappear(animated: Bool){
+        if sealife {
+        sealife!.player!.stop()
+        }
+    }
 
     /*
     // #pragma mark - Navigation

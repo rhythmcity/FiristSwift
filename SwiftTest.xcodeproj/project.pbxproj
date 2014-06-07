@@ -31,7 +31,12 @@
 		BA93536C194039F600E6C389 /* 11-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA935361194039F600E6C389 /* 11-4.png */; };
 		BA93536E1940425100E6C389 /* FirstAblumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536D1940425100E6C389 /* FirstAblumView.swift */; };
 		BA93537019405C0100E6C389 /* SeaLifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93536F19405C0100E6C389 /* SeaLifeView.swift */; };
+		BAACCDD21942FC5000533A34 /* YoungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACCDD11942FC5000533A34 /* YoungView.swift */; };
+		BAACCDD51943521200533A34 /* ly_back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAACCDD31943521200533A34 /* ly_back.png */; };
+		BAACCDD61943521200533A34 /* ly_fore.png in Resources */ = {isa = PBXBuildFile; fileRef = BAACCDD41943521200533A34 /* ly_fore.png */; };
 		BAE9C9D21941B653003B0C9F /* sea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAE9C9D11941B653003B0C9F /* sea.jpg */; };
+		BAE9C9D41941ED68003B0C9F /* SatisfactionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE9C9D31941ED68003B0C9F /* SatisfactionScene.swift */; };
+		BAE9C9D619420450003B0C9F /* seaandBird.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAE9C9D519420450003B0C9F /* seaandBird.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +78,12 @@
 		BA935361194039F600E6C389 /* 11-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-4.png"; sourceTree = "<group>"; };
 		BA93536D1940425100E6C389 /* FirstAblumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAblumView.swift; sourceTree = "<group>"; };
 		BA93536F19405C0100E6C389 /* SeaLifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaLifeView.swift; sourceTree = "<group>"; };
+		BAACCDD11942FC5000533A34 /* YoungView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoungView.swift; sourceTree = "<group>"; };
+		BAACCDD31943521200533A34 /* ly_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ly_back.png; sourceTree = "<group>"; };
+		BAACCDD41943521200533A34 /* ly_fore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ly_fore.png; sourceTree = "<group>"; };
 		BAE9C9D11941B653003B0C9F /* sea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sea.jpg; sourceTree = "<group>"; };
+		BAE9C9D31941ED68003B0C9F /* SatisfactionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SatisfactionScene.swift; sourceTree = "<group>"; };
+		BAE9C9D519420450003B0C9F /* seaandBird.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seaandBird.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +181,8 @@
 				BA4E8EBB193F19FC00255ABA /* DetailView.swift */,
 				BA93536D1940425100E6C389 /* FirstAblumView.swift */,
 				BA93536F19405C0100E6C389 /* SeaLifeView.swift */,
+				BAE9C9D31941ED68003B0C9F /* SatisfactionScene.swift */,
+				BAACCDD11942FC5000533A34 /* YoungView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -178,6 +190,9 @@
 		BA935356194039CE00E6C389 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BAACCDD31943521200533A34 /* ly_back.png */,
+				BAACCDD41943521200533A34 /* ly_fore.png */,
+				BAE9C9D519420450003B0C9F /* seaandBird.mp3 */,
 				BAE9C9D11941B653003B0C9F /* sea.jpg */,
 				BA935357194039F600E6C389 /* 1.jpg */,
 				BA935358194039F600E6C389 /* 2.jpg */,
@@ -274,8 +289,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA935367194039F600E6C389 /* 6.jpg in Resources */,
+				BAACCDD51943521200533A34 /* ly_back.png in Resources */,
 				BA935366194039F600E6C389 /* 5.jpg in Resources */,
+				BAE9C9D619420450003B0C9F /* seaandBird.mp3 in Resources */,
 				BA4E8EEB193F54D000255ABA /* MyTableViewCell.xib in Resources */,
+				BAACCDD61943521200533A34 /* ly_fore.png in Resources */,
 				BA935363194039F600E6C389 /* 2.jpg in Resources */,
 				BA935365194039F600E6C389 /* 4.jpg in Resources */,
 				BA935362194039F600E6C389 /* 1.jpg in Resources */,
@@ -311,7 +329,9 @@
 				BA4E8EBC193F19FD00255ABA /* DetailView.swift in Sources */,
 				BA4E8EFF193F55BB00255ABA /* MyCellContentView.swift in Sources */,
 				BA93536E1940425100E6C389 /* FirstAblumView.swift in Sources */,
+				BAE9C9D41941ED68003B0C9F /* SatisfactionScene.swift in Sources */,
 				BA4E8EEA193F54D000255ABA /* MyTableViewCell.swift in Sources */,
+				BAACCDD21942FC5000533A34 /* YoungView.swift in Sources */,
 				BA9353521940390D00E6C389 /* RootViewController.swift in Sources */,
 				BA9353501940390D00E6C389 /* DetailViewController.swift in Sources */,
 			);

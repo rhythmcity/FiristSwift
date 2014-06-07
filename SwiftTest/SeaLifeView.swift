@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 class SeaLifeView: UIView {
      var  imageview:UIImageView?
      var _currentWaterColor:UIColor?
@@ -15,15 +16,33 @@ class SeaLifeView: UIView {
      var a:CGFloat = 0.0
      var b:CGFloat = 0.0
      var jia:Bool = false
-    
+     var leftx:CGFloat = 0.0
+     var lefty:CGFloat = 0.0
+     var rightx:CGFloat = 0.0
+     var righty:CGFloat = 0.0
+     var up:Bool = false
+    var player:AVAudioPlayer?
     init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
         self.backgroundColor=UIColor.whiteColor()
-        _currentWaterColor = UIColor(red:86/255.0 ,green:202/255.0 ,blue:139/255.0, alpha:1)
+        _currentWaterColor = UIColor(red:187/255.0 ,green:255/255.0 ,blue:255/255.0, alpha:1)
         _currentLinePointY = 250;
         
         NSTimer.scheduledTimerWithTimeInterval(0.02, target :  self, selector:  "sealifeAnimation", userInfo: nil, repeats : true)
+        let path = NSBundle.mainBundle().pathForResource("seaandBird", ofType: "mp3")
+       
+        var error : NSError?
+        self.player = AVAudioPlayer(contentsOfURL:NSURL.URLWithString(path), error:&error)
+         println(self.player)
+        println (error.description)
+        self.player!.numberOfLoops = -1
+        //[playerError description]
+        // self.player!.prepareToPlay()
+        if self.player!.prepareToPlay(){
+
+        self.player!.play()
+        }
     // sealifeAnimation()
         
         
@@ -39,6 +58,7 @@ class SeaLifeView: UIView {
 //        self.layer.addAnimation(animation,forKey: nil)
         if jia {
             a = a + 0.01
+            
         }else{
             a = a - 0.01
         }
@@ -46,6 +66,7 @@ class SeaLifeView: UIView {
         
         if a<=1 {
             jia = true
+            
         }
         
         if a>=1.5 {
@@ -54,6 +75,29 @@ class SeaLifeView: UIView {
         
         
         b = b + 0.1
+        
+        
+        if  up {
+            leftx = leftx + 0.1
+            lefty = lefty - 0.1
+            rightx = rightx - 0.2
+            righty = righty - 0.2
+        
+        }else{
+           leftx = leftx - 0.1
+           lefty = lefty + 0.1
+           rightx = rightx + 0.2
+           righty = righty + 0.2
+        }
+        if leftx > 1{
+        
+           up = false
+        }
+        
+        if  leftx < -5 {
+        
+            up = true
+        }
         
         setNeedsDisplay()
         
@@ -67,6 +111,20 @@ class SeaLifeView: UIView {
         // Drawing code
         var context = UIGraphicsGetCurrentContext() as CGContextRef;
         var path = CGPathCreateMutable() as CGMutablePathRef;
+    
+        CGContextSetLineWidth(context, 3.0);//线的
+        CGContextMoveToPoint(context, 30+leftx, 160+lefty);//开始坐标p1
+        //CGContextAddArcToPoint(CGContextRef c, CGFloat x1, CGFloat y1,CGFloat x2, CGFloat y2, CGFloat radius)
+        //x1,y1跟p1形成一条线的坐标p2，x2,y2结束坐标跟p3形成一条线的p3,radius半径,注意, 需要算好半径的长度,
+        CGContextAddArcToPoint(context, 50, 170, 55, 230, 15);
+        CGContextStrokePath(context);//绘画路径
+
+        CGContextMoveToPoint(context, 50, 180);//开始坐标p1
+        //CGContextAddArcToPoint(CGContextRef c, CGFloat x1, CGFloat y1,CGFloat x2, CGFloat y2, CGFloat radius)
+        //x1,y1跟p1形成一条线的坐标p2，x2,y2结束坐标跟p3形成一条线的p3,radius半径,注意, 需要算好半径的长度,
+        CGContextAddArcToPoint(context, 60, 140, 80+rightx, 140+righty, 15);
+        CGContextStrokePath(context);//绘画路径
+
         
         //画水
         CGContextSetLineWidth(context, 1);
